@@ -1,0 +1,17 @@
+game:GetService('RunService').Stepped:Connect(function()
+	if game.Players.LocalPlayer.Character and game.Players.LocalPlayer.Character:FindFirstChildOfClass('Humanoid') then
+       game.Players.LocalPlayer.Character.Humanoid:ChangeState(11)
+    end
+end)
+
+for k, v in next, workspace.Items:GetChildren() do
+	if v.ClassName == 'Part' and 'Orange' and 'Vent' then
+		for times = 1, 15 do -- times of how many teleports for the fireprox to run properly
+            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.CFrame
+            task.wait(0.1)
+            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.CFrame
+    fireproximityprompt(v.ProximityPrompt) 		
+			
+		end
+	end	
+end
